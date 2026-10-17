@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "author": "Thulasiram Sudheeswar",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 90,
+      "left": 40,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": 15,
+      "left": 310,
+      "attrs": {
+        "temperature": "28",
+        "humidity": "60"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "pullup",
+      "top": 90,
+      "left": 230,
+      "rotate": 90,
+      "attrs": {
+        "value": "10000"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:TX0",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX0",
+      "$serialMonitor:TX",
+      "",
+      []
+    ],
+    [
+      "esp:3V3",
+      "dht:VCC",
+      "red",
+      [
+        "h50",
+        "v-100"
+      ]
+    ],
+    [
+      "esp:GND.1",
+      "dht:GND",
+      "black",
+      [
+        "h70",
+        "v-30"
+      ]
+    ],
+    [
+      "esp:D15",
+      "dht:SDA",
+      "green",
+      [
+        "h90",
+        "v-80"
+      ]
+    ],
+    [
+      "pullup:1",
+      "dht:VCC",
+      "red",
+      []
+    ],
+    [
+      "pullup:2",
+      "dht:SDA",
+      "green",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

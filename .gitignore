@@ -1,0 +1,13 @@
+config.h
+private_cloud.json
+.env
+.env.*
+!.env.example
+.pio/
+__pycache__/
+*.pyc
+*.exe
+*.o
+*.bin
+.vscode/
+.DS_Store
